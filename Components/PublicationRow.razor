@@ -1,0 +1,46 @@
+﻿@using PersonalWebsite.Data.Entities
+<tr class="@(Publication.IsInfluential ? "publication-influential" : "" )">
+    <td>
+        <div class="pub-title">@Publication.Title</div>
+        <div class="pub-authors">
+            <ForEachInline Items="@Publication.Authors" Context="author" Separator=",">
+                <ItemTemplate>
+                    @if (author == Author.Me)
+                    {
+                        <b>@author</b>
+                    }
+                    else
+                    {
+                        @author
+                    }
+                </ItemTemplate>
+            </ForEachInline>
+        </div>
+        <div class="pub-conf-journal-name">@Publication.ConferenceName</div>
+        <div class="pub-meta">
+            @if (Publication.LinkToConference != null)
+            {
+                <a href="@Publication.LinkToConference" target="_blank"><span class="tag pub-tag">Conference</span></a>
+            }
+            @if (Publication.LinkToJournal != null)
+            {
+                <a href="@Publication.LinkToJournal" target="_blank"><span class="tag pub-tag">Journal</span></a>
+            }
+            @if (Publication.LinkToArxiv != null)
+            {
+                <a href="@Publication.LinkToArxiv" target="_blank"><span class="tag pub-tag">PDF</span></a>
+            }
+            @if (Publication.LinkToCode != null)
+            {
+                <a href="@Publication.LinkToCode" target="_blank"><span class="tag pub-tag">Code</span></a>
+            }
+        </div>
+    </td>
+    <td nowrap>
+        <div class="pub-conf-abbrv">@Publication.ConferenceAbbreviation</div>
+    </td>
+</tr>
+@code {
+    [Parameter]
+    public required Publication Publication { get; init; }
+}

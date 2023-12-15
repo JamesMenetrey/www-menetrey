@@ -1,0 +1,476 @@
+﻿@page "/"
+@using PersonalWebsite.Data
+@inject PublicationList PublicationList
+
+<PageTitle>Homepage of Jämes Ménétrey</PageTitle>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="slogan">
+                    I'm a <span class="highlight-anim"><span class="highlight__inner-anim">Ph.D. Student</span></span> at the <a href="https://www.unine.ch" target="_blank">University of Neuchâtel</a>,
+                    <br class="is-hidden-mobile" />in the <a href="https://www.unine.ch/sciences/en/home.html" target="_blank">Faculty of Science</a>, affiliated with the <a href="https://www.unine.ch/iiun" target="_blank">Computer Science Department (IIUN)</a>,
+                    <br/><br />
+                    I'm also a <span class="highlight-anim"><span class="highlight__inner-anim">Recognized Contributor</span></span> to WebAssembly-related technologies by the <a href="https://bytecodealliance.org/" target="_blank">Bytecode Alliance</a>.
+                </div>
+                @*
+        <div class="news">
+          <b class="slogan at-a-glance-header">News! <i class="fas fa-bullhorn"></i></b>
+          <br>I am recruiting PhD students interested in distributed programming! Particularly at the intersection of machine learning, programming models/languages, and distributed systems. If that sounds like you, don't hesitate to reach out!<br><br>
+        </div>
+        <div class="news">
+          <b class="slogan">Formerly...</b>
+          <br>I was the co-founder and Executive Director of the <a href="http://scala.epfl.ch">Scala Center</a> at <a href="http://epfl.ch">EPFL</a>, where I was also a research scientist. I was also an Assistant Clinical Professor in the <a href="https://www.ccis.northeastern.edu/">College of Computer and Information Science</a> at <a href="http://northeastern.edu">Northeastern Univeristy</a>.
+        </div>
+        *@
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="lighter-blue-bg-bar">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div id="research" class="at-a-glance-header">
+                        <i class="fas fa-flask"></i>
+                        Research
+                    </div>
+                </div>
+                <div class="column content research">
+                    <p>
+                        I'm deeply engaged in the fields of computer programming and cybersecurity.
+                        My research primarily revolves around two key areas:
+                    </p>
+                    <ul>
+                        <li>
+                            <b class="white">Enhancing software security:</b>
+                            This involves the use of <b class="white">trusted execution environments</b> (TEEs) to secure software execution.
+                            My approach is centered on safeguarding sensitive computations and data from unauthorized access and manipulation,
+                            while ensuring trustworthy execution thanks to attestation.
+                        </li>
+                        <li>
+                            <b class="white">Simplifying programming experience:</b>
+                            I focus on abstracting the complexity inherent in programming for trusted execution environments through the use of <b class="white">WebAssembly</b>.
+                            This technology serves as a bridge, making it easier for developers to work with various TEEs and platforms.
+                        </li>
+                    </ul>
+                    <p>
+                        My Ph.D. thesis focuses on combining these two areas to provide trustworthy and attestable executing environments,
+                        while lowering the friction for developers of using such complex technologies by leveraging WebAssembly.
+                    </p>
+                    <p>
+                        My research projects mostly use <a href="https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html" target="_blank">Intel SGX</a>
+                        as a trusted execution environment, and <a href="https://github.com/bytecodealliance/wasm-micro-runtime" target="_blank">WebAssembly Micro Runtime (WAMR)</a>
+                        as a runtime to execute WebAssembly bytecode.
+                        As a strong believer in open source, my scientific contributions are usually available online, and upstreamed
+                        back to the official open-source repositories when possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <div id="publications" class="at-a-glance-header">
+                    <i class="fas fa-file-alt"></i>
+                    Publications
+                </div>
+            </div>
+            <div class="column">
+                <p class="research" style="margin-bottom: 30px">
+                    My publications are also indexed on
+                    <a href="https://scholar.google.com/citations?user=q--k8YAAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+                    and <a href="https://dblp.org/pid/289/2287.html" target="_blank">DBLP</a>.
+                    Influential publications are <span class="publication-influential">highlighted</span>.
+                </p>
+                <div class="subsec-head">Conference Papers and Journal Articles</div>
+                <div class="columns">
+                    <div class="column">
+                        <table class="table publications">
+                            <tbody>
+                            @foreach (var publication in PublicationList.GetPublications(true))
+                            {
+                                <PublicationRow Publication="publication"/>
+                            }
+                            </tbody>
+                        </table>
+                        @*<a class="button publication-button" href="/publications.html">Full Publication List</a>*@
+                    </div>
+                    <div class="column">
+                        <table class="table publications">
+                            <tbody>
+                            @foreach (var publication in PublicationList.GetPublications(false))
+                            {
+                                <PublicationRow Publication="publication" />
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="lighter-blue-bg-bar">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div id="opensource" class="at-a-glance-header">
+                        <i class="fas fa-code"></i>
+                        Open Source
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="research" style="margin-bottom: 30px">
+                        I strongly support open source as a means of knowledge sharing.
+                        My GitHub profile is <a href="https://github.com/JamesMenetrey" target="_blank">JamesMenetrey</a>.
+                        <br />
+                        Below are some of my important contributions I have made over the past years.
+                    </p>
+                    <div class="columns">
+                        <div class="column">
+                            <span class="subsec-head">Contributions to WebAssembly</span>
+                            <table class="table service-table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        WebAssembly Micro Runtime (WAMR)
+                                        <div class="abbrv">Fast, dependable and lightweight WebAssembly runtime</div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/bytecodealliance/wasm-micro-runtime" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3Abytecodealliance%2Fwasm-micro-runtime" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Librats
+                                        <div class="abbrv">Low level attester and verifier drivers for multiple TEEs</div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/inclavare-containers/librats" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3Ainclavare-containers%2Flibrats" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        WebAssembly Spec
+                                        <div class="abbrv">WebAssembly specification, reference interpreter, and test suite.</div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/WebAssembly/spec" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3AWebAssembly%2Fspec" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <span class="subsec-head">Contributions to TEEs</span>
+                            <table class="table service-table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        OP-TEE/build
+                                        <div class="abbrv">Makefiles to use OP-TEE on various platforms</div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/OP-TEE/build" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3AOP-TEE%2Fbuild" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <span class="subsec-head">Contributions to Cryptography</span>
+                            <table class="table service-table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        WolfSSL/examples
+                                        <div class="abbrv">Example applications using the wolfSSL lightweight SSL/TLS library</div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/wolfSSL/wolfssl-examples" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3AwolfSSL%2Fwolfssl-examples" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <span class="subsec-head">Contributions to Reverse Engineering</span>
+                            <table class="table service-table">
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        MemorySharp (author)
+                                        <div class="abbrv">
+                                            A C# based memory editing library targeting Windows applications, offering various functions 
+                                            to extract and inject data and codes into remote processes to allow interoperability.
+                                        </div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/JamesMenetrey/MemorySharp" target="_blank">Repo</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Fasm.NET (author)
+                                        <div class="abbrv">
+                                            A managed wrapper to use FASM compiler from .NET applications.
+                                        </div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/JamesMenetrey/Fasm.NET" target="_blank">Repo</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Keystone-engine
+                                        <div class="abbrv">
+                                            Keystone assembler framework: Core (Arm, Arm64, Hexagon, Mips, PowerPC, Sparc, SystemZ & X86) + bindings
+                                        </div>
+                                    </th>
+                                    <td nowrap>
+                                        <a href="https://github.com/keystone-engine/keystone" target="_blank">Repo</a>,
+                                        <a href="https://github.com/pulls?q=author%3AJamesMenetrey+repo%3Akeystone-engine%2Fkeystone" target="_blank">Pull Requests</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <div id="service" class="sec-head">
+                    <span class="fa-layers fa-fw">
+                        <i class="fas fa-hand-paper" style="color:rgba(121, 152, 175, 0.5);"></i>
+                        <i id="service-heart" class="fa-inverse fas fa-heart" data-fa-transform="shrink-8 down-2 right-1"></i>
+                    </span>
+                    Service
+                </div>
+            </div>
+            <div class="column">
+                <span class="subsec-head">Organizing Committee Member</span>
+                <table class="table service-table">
+                    <tbody>
+                    <tr>
+                        <th>
+                            DEBS
+                            <div class="abbrv">ACM International Conference on Distributed and Event-based Systems</div>
+                        </th>
+                        <td nowrap><a href="https://2023.debs.org/" target="_blank">2023</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="subsec-head">Master and Bachelor Supervisor</span>
+                <table class="table service-table">
+                    <tbody>
+                    <tr>
+                        <th>
+                            UniNE
+                            <div class="abbrv">University of Neuchâtel</div>
+                        </th>
+                        <td nowrap>2022, 2023</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="subsec-head">Master and Bachelor Assessor</span>
+                <table class="table service-table">
+                    <tbody>
+                    <tr>
+                        <th>
+                            HES-SO
+                            <div class="abbrv">University of Applied Sciences and Arts Western Switzerland</div>
+                        </th>
+                        <td nowrap>2023</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            HEIG-VD
+                            <div class="abbrv">Haute École d'Ingénierie et de Gestion du Canton de Vaud</div>
+                        </th>
+                        <td nowrap>2019</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <span class="subsec-head">Capture the Flag Challenges Contributor</span>
+                <table class="table service-table">
+                    <tbody>
+                    <tr>
+                        <th>
+                            BlackAlps
+                            <div class="abbrv">Black Alps is a non-profit organization whose main goal is the promotion of cybersecurity through the organization of Black Alps yearly conferences.</div>
+                        </th>
+                        <td nowrap><a href="https://www.blackalps.ch/ba-19/">2019</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="lighter-blue-bg-bar">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-fifth">
+                    <div id="curriculum" class="at-a-glance-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        Curriculum
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="teaching-head">Education</div>
+                    <table class="table service-table">
+                        <tbody>
+                        <tr>
+                            <th>
+                                Ph.D. in Computer Science
+                                <div class="abbrv">University of Neuchâtel, Switzerland</div>
+                            </th>
+                            <td nowrap>2020—</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                M.Sc. in Engineering
+                                <div class="abbrv">University of Applied Sciences Western Switzerland (HES-SO)</div>
+                            </th>
+                            <td nowrap>2018—2020</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                B.Sc. in Computer Science
+                                <div class="abbrv">Haute École d'Ingénierie et de Gestion du Canton de Vaud, Switzerland (HEIG-VD)</div>
+                            </th>
+                            <td nowrap>2014—2018</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Advanced Federal Diploma of Higher Education in Software Engineering
+                                <div class="abbrv">CPNV, Centre Professionnel du Nord Vaudois, Switzerland</div>
+                            </th>
+                            <td nowrap>2012—2014</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Federal VET Diploma in Computer Science
+                                <div class="abbrv">EPSIC École professionnelle de Lausanne, Switzerland</div>
+                            </th>
+                            <td nowrap>2008—2012</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="teaching-head">Awards</div>
+                    <table class="table service-table">
+                        <tbody>
+                        <tr>
+                            <th>
+                                Recognized Contributor (WebAssembly-related)
+                                <div class="abbrv">The Bytecode Alliance</div>
+                            </th>
+                            <td nowrap>2023</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                HiPEAC Tech Transfer Award (WebAssembly-related)
+                                <div class="abbrv">HiPEAC</div>
+                            </th>
+                            <td nowrap>2022</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Best Overall Marks
+                                <div class="abbrv">Haute École d'Ingénierie et de Gestion du Canton de Vaud, Switzerland (HEIG-VD)</div>
+                            </th>
+                            <td nowrap>2018</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Outstanding Bachelor's thesis
+                                <div class="abbrv">Haute École d'Ingénierie et de Gestion du Canton de Vaud, Switzerland (HEIG-VD)</div>
+                            </th>
+                            <td nowrap>2018</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Best Overall Marks
+                                <div class="abbrv">CPNV, Centre Professionnel du Nord Vaudois, Switzerland</div>
+                            </th>
+                            <td nowrap>2014</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Best Work of Diploma
+                                <div class="abbrv">CPNV, Centre Professionnel du Nord Vaudois, Switzerland</div>
+                            </th>
+                            <td nowrap>2014</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Award of Excellence
+                                <div class="abbrv">EPSIC École professionnelle de Lausanne, Switzerland</div>
+                            </th>
+                            <td nowrap>2012</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="column">
+                    <div class="teaching-head">Employment</div>
+                    <table class="table service-table">
+                        <tbody>
+                        <tr>
+                            <th>
+                                Scientific collaborator & teaching assistant
+                                <div class="abbrv">University of Neuchâtel, Switzerland</div>
+                            </th>
+                            <td nowrap>2020—</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Intern Security Engineer
+                                <div class="abbrv">Navixia SA, Switzerland</div>
+                            </th>
+                            <td nowrap>2019—2020</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Web Software Developer
+                                <div class="abbrv">IMD Business School, Switzerland</div>
+                            </th>
+                            <td nowrap>2014—2018</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Apprenticeship in Computer Science
+                                <div class="abbrv">EPFL, Switzerland</div>
+                            </th>
+                            <td nowrap>2008—2012</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

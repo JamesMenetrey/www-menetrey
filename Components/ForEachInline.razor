@@ -1,0 +1,32 @@
+﻿@typeparam TItem
+
+@foreach (var item in Items)
+{
+    @if (_firstItem)
+    {
+        _firstItem = false;
+        @ItemTemplate(item)
+    }
+    else
+    {
+        <text>@Separator @ItemTemplate(item)</text>
+    }
+}
+
+@code {
+    private bool _firstItem;
+    
+    [Parameter]
+    public required RenderFragment<TItem> ItemTemplate { get; init; }
+    
+    [Parameter]
+    public required IEnumerable<TItem> Items { get; init; }
+    
+    [Parameter]
+    public required string Separator { get; init; }
+
+    protected override void OnParametersSet()
+    {
+        _firstItem = true;
+    }
+}

@@ -1,0 +1,110 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime Js
+
+<nav id="entireNavbar" class="navbar is-fixed-top">
+  <div id="specialShadow" class="bd-special-shadow" style="opacity: 1; transform: scaleY(1);"></div>
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item navbar-logo" href="/">
+        <span class="james">JÄMES</span>&thinsp;<span class="menetrey">MÉNÉTREY</span>
+      </a>
+
+      <div id="navbarBurger" class="navbar-burger burger" data-target="navBar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navBar" class="navbar-menu">
+      <div class="navbar-start">
+        <!--Nothing here right now-->
+      </div>
+
+      <div class="navbar-end navbar-text">
+        <NavLink class="navbar-item" href="#research" Match="NavLinkMatch.All">
+          <span class="topbar-item">Research</span>
+        </NavLink>
+        <NavLink class="navbar-item" href="#publications" Match="NavLinkMatch.All">
+          <span class="topbar-item">Publications</span>
+        </NavLink>
+        <NavLink class="navbar-item" href="#opensource" Match="NavLinkMatch.All">
+          <span class="topbar-item">Open source</span>
+        </NavLink>
+        <NavLink class="navbar-item" href="#service" Match="NavLinkMatch.All">
+          <span class="topbar-item">Service</span>
+        </NavLink>
+        <NavLink class="navbar-item" href="#curriculum" Match="NavLinkMatch.All">
+          <span class="topbar-item">Curriculum</span>
+        </NavLink>
+        <a class="navbar-item" href="#contact"><span class="topbar-item">Contact</span></a>
+        <a class="navbar-item" href="https://github.com/jamesmenetrey" target="_blank"><span class="topbar-item"><i class="fab fa-github"></i></span></a>
+        <a class="navbar-item" href="https://www.linkedin.com/in/jamesmenetrey/" target="_blank"><span class="topbar-item"><i class="fab fa-linkedin"></i></span></a>
+        <a class="navbar-item" href="https://twitter.com/jamesmenetrey" target="_blank"><span class="topbar-item"><i class="fab fa-twitter"></i></span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<svg height="0" width="0">
+  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#e052a0;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#f15d40;stop-opacity:1" />
+  </linearGradient>
+</svg>
+
+@Body
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column bio">
+        <div class="circular james"></div>
+        <p>
+          <img src="/img/unine_FS_Informatique_blanc.png" alt="UniNE"/>
+        </p>
+      </div>
+      <div class="column">
+        <span id="contact" class="list-head">Where to find me?</span>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-university"></i>
+            Université de Neuchâtel
+            <br/>Jämes Ménétrey, B124
+            <br/>Faculté des sciences
+            <br/>Rue Emile-Argand 11
+            <br/>2000 Neuchâtel
+            <br/>Switzerland
+          </li>
+          <li><i class="fa-li fa fa-envelope"></i>
+            <a href="mailto:james.menetrey@unine.ch" target="_blank">james.menetrey@unine.ch</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <span class="list-head">Social networks</span>
+        <ul class="fa-ul">
+          <li><i class="fa-li fab fa-github"></i><a href="https://github.com/jamesmenetrey" target="_blank">JamesMenetrey</a></li>
+          <li><i class="fa-li fab fa-linkedin"></i><a href="https://www.linkedin.com/in/jamesmenetrey/" target="_blank">Jämes Ménétrey</a></li>
+          <li><i class="fa-li fab fa-twitter"></i><a href="https://twitter.com/jamesmenetrey" target="_blank">JamesMenetrey</a></li>
+        </ul>
+      </div>
+      <div class="column">
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <p>
+        This website is powered with ❤️ using WebAssembly.<br/>
+        The template has been forked from the great personal website of
+        <a href="https://heather.miller.am" target="_blank">Heather Miller</a>. Thanks to her!
+      </p>
+    </div>
+  </div>
+</footer>
+<AnchorNavigation />
+
+@code {
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    await Js.InvokeVoidAsync("onPageLoaded");
+  }
+}
