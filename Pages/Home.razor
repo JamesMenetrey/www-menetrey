@@ -93,7 +93,15 @@
                     Influential publications are <span class="publication-influential">highlighted</span>.
                 </p>
                 <div class="subsec-head">Conference Papers and Journal Articles</div>
-                <div class="columns">
+                <table class="table publications is-hidden-tablet">
+                    <tbody>
+                    @foreach (var publication in PublicationList.Publications)
+                    {
+                        <PublicationRow Publication="publication"/>
+                    }
+                    </tbody>
+                </table>
+                <div class="columns is-hidden-mobile">
                     <div class="column">
                         <table class="table publications">
                             <tbody>
