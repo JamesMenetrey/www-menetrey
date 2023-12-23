@@ -1,2 +1,4 @@
 ﻿User-agent: *
 Allow: /
+
+Sitemap: https://james.menetrey.org/sitemap.xml
