@@ -18,6 +18,14 @@
         </div>
         <div class="pub-conf-journal-name">@Publication.ConferenceName</div>
         <div class="pub-meta">
+            @if (Publication.LinkToDoi != null)
+            {
+                <a href="@Publication.LinkToDoi" target="_blank"><span class="tag pub-tag">DOI</span></a>
+            }
+            @if (Publication.LinkToArxiv != null)
+            {
+                <a href="@Publication.LinkToArxiv" target="_blank"><span class="tag pub-tag">arXiv</span></a>
+            }
             @if (Publication.LinkToConference != null)
             {
                 <a href="@Publication.LinkToConference" target="_blank"><span class="tag pub-tag">Conference</span></a>
@@ -25,10 +33,6 @@
             @if (Publication.LinkToJournal != null)
             {
                 <a href="@Publication.LinkToJournal" target="_blank"><span class="tag pub-tag">Journal</span></a>
-            }
-            @if (Publication.LinkToArxiv != null)
-            {
-                <a href="@Publication.LinkToArxiv" target="_blank"><span class="tag pub-tag">PDF</span></a>
             }
             @if (Publication.LinkToCode != null)
             {
