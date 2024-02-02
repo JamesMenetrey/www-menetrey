@@ -63,7 +63,7 @@ public class PublicationList
             Date = new(2023, 12, 01),
             Doi = "10.4230/LIPIcs.OPODIS.2023.23",
             Title = "A Holistic Approach for Trustworthy Distributed Systems with WebAssembly and TEEs",
-            LinkToArxiv = new("https://lol.com"),
+            LinkToArxiv = new("https://arxiv.org/abs/2312.00702"),
             LinkToCode = new("https://github.com/JamesMenetrey/unine-opodis2023"),
             LinkToConference = new("https://xdefago.github.io/opodis23/")
         },
