@@ -35,10 +35,9 @@ code.highlighter-rouge {
 }
 
 .slogan {
-    padding-top: 80px;
-    padding-bottom: 80px;
     color: #fff;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    padding-top: 20px;
 }
 
 .slogan a {
@@ -48,6 +47,23 @@ code.highlighter-rouge {
 
 .slogan a:hover,.slogan a.is-active {
     color: #485a70
+}
+
+@media screen and (min-width: 769px) {
+    .slogan {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+}
+
+.bio.top {
+    padding-top: 20px;
+}
+
+@media screen and (min-width: 769px) {
+    .bio.top {
+        padding-top: 100px;
+    }
 }
 
 .lighter-blue-bg-bar {
