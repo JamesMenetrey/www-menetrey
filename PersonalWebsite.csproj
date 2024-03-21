@@ -4,11 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Disable the loading screen when browsing the website (using the prerendering Nuget package. -->
+    <BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BlazorWasmPreRendering.Build" Version="3.1.0-preview.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Toolbelt.Blazor.HeadElement" Version="7.3.1" />
   </ItemGroup>
 
   <ItemGroup>
