@@ -153,3 +153,11 @@ function BlazorScrollToId(id) {
         });
     }
 }
+
+/* Used to animate texts once the page is loaded (prevents blinking on prerendering). */
+function StartTextAnimations() {
+    document.querySelectorAll('.to-highlight-anim').forEach(function(element) {
+        element.classList.remove('to-highlight-anim');
+        element.classList.add('highlight-anim');
+    });
+}
