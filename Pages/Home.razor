@@ -12,8 +12,8 @@
             </div>
             <div class="column">
                 <div class="slogan">
-                    I'm a <span class="to-highlight-anim"><span class="highlight__inner-anim">Ph.D. Student</span></span> at the <a href="https://www.unine.ch" target="_blank">University of Neuchâtel</a>,
-                    <br class="is-hidden-mobile" />in the <a href="https://www.unine.ch/sciences/en/home.html" target="_blank">Faculty of Science</a>, affiliated with the <a href="https://www.unine.ch/iiun" target="_blank">Computer Science Department (IIUN)</a>.
+                    I'm a <span class="to-highlight-anim"><span class="highlight__inner-anim">System Software Architect</span></span> at <a href="https://www.cysec.com" target="_blank">CYSEC</a>,
+                    <br />I hold a Ph.D. degree in Computer Science from the <a href="https://www.unine.ch" target="_blank">University of Neuchâtel</a>.
                     <br/><br />
                     I'm also a <span class="to-highlight-anim"><span class="highlight__inner-anim">Recognized Contributor</span></span> to WebAssembly technologies by the <a href="https://bytecodealliance.org/" target="_blank">Bytecode Alliance</a>.
                 </div>
@@ -50,9 +50,10 @@
                     <ul>
                         <li>
                             <b class="white">Enhancing software security:</b>
-                            This involves the use of <b class="white">trusted execution environments</b> (TEEs) to secure software execution.
-                            My approach is centered on safeguarding sensitive computations and data from unauthorized access and manipulation,
-                            while ensuring trustworthy execution thanks to attestation.
+                            This involves the use of <b class="white">trusted execution environments</b> (TEEs) to secure 
+                            software execution against unauthorised access and tampering, while attesting system integrity 
+                            using <b class="white">AMD SEV-SNP</b>, <b class="white">Intel TDX</b>, <b class="white">Intel SGX</b>, 
+                            and <b class="white">Arm TrustZone</b>. 
                         </li>
                         <li>
                             <b class="white">Simplifying programming experience:</b>
@@ -61,12 +62,15 @@
                         </li>
                     </ul>
                     <p>
-                        My Ph.D. thesis focuses on combining these two areas to provide trustworthy and attestable executing environments,
+                        My Ph.D. thesis focused on combining these two areas to provide trustworthy and attestable executing environments,
                         while lowering the friction for developers of using such complex technologies by leveraging WebAssembly.
                     </p>
                     <p>
-                        My research projects mostly use <a href="https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html" target="_blank">Intel SGX</a>
-                        as a trusted execution environment, and <a href="https://github.com/bytecodealliance/wasm-micro-runtime" target="_blank">WebAssembly Micro Runtime (WAMR)</a>
+                        My research projects mostly use <a href="https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html" target="_blank">Intel SGX</a>,
+                        <a href="https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html" target="_blank">Intel TDX</a>,
+                        and <a href="https://www.amd.com/en/developer/sev.html" target="_blank">AMD SEV-SNP</a>
+                        as trusted execution environments, and 
+                        <a href="https://github.com/bytecodealliance/wasm-micro-runtime" target="_blank">WebAssembly Micro Runtime (WAMR)</a>
                         as a runtime to execute WebAssembly bytecode.
                         As a strong believer in open source, my scientific contributions are usually available online, and upstreamed
                         back to the official open-source repositories when possible.
@@ -125,6 +129,23 @@
                         </table>
                     </div>
                 </div>
+                <div class="subsec-head">Ph.D. thesis</div>
+                <p>
+                    <b>WebAssembly as an Abstraction for Secure and Efficient Computing in Trusted Execution Environments</b>, 2024.
+                    <br/>Jury: Prof. Pascal Felber, Prof. Marcelo Pasin, Prof. Rüdiger Kapitza, Prof. Rachid Guerraoui, Prof. Valerio Schiavoni
+                </p>
+                <table class="table publications" style="margin: 0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="pub-meta">
+                                    <a href="https://libra.unine.ch/handle/20.500.14713/99578" target="_blank"><span class="tag pub-tag">DOI</span></a>
+                                    <a href="https://libra.unine.ch/handle/20.500.14713/99578" target="_blank"><span class="tag pub-tag">Open access</span></a>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -146,7 +167,7 @@
                         I strongly support open source as a means of knowledge sharing.
                         My GitHub profile is <a href="https://github.com/JamesMenetrey" target="_blank">JamesMenetrey</a>.
                         <br />
-                        Below are some of my important contributions I have made over the past years.
+                        Below are some of the important contributions I have made over the past years.
                     </p>
                     <div class="columns">
                         <div class="column">
@@ -225,7 +246,7 @@
                                         MemorySharp (author)
                                         <div class="abbrv">
                                             A C# based memory editing library targeting Windows applications, offering various functions 
-                                            to extract and inject data and codes into remote processes to allow interoperability.
+                                            to extract and inject data and code into remote processes to allow interoperability.
                                         </div>
                                     </th>
                                     <td nowrap>
@@ -278,9 +299,16 @@
                 </div>
             </div>
             <div class="column">
-                <span class="subsec-head">Organizing Committee Member</span>
+                <span class="subsec-head">Organising Committee Member</span>
                 <table class="table service-table">
                     <tbody>
+                    <tr>
+                        <th>
+                            SRDS
+                            <div class="abbrv">International Symposium on Reliable Distributed Systems</div>
+                        </th>
+                        <td nowrap><a href="https://srds-conference.org/" target="_blank">2025</a></td> @* TO UPDATE IN 2026 ------------------ *@
+                    </tr>
                     <tr>
                         <th>
                             DEBS
@@ -288,8 +316,17 @@
                         </th>
                         <td nowrap><a href="https://2023.debs.org/" target="_blank">2023</a></td>
                     </tr>
+                    <tr>
+                        <th>
+                            BlackAlps (Challenge developer)
+                            <div class="abbrv">Black Alps is a non-profit organisation whose main goal is the promotion of cybersecurity through the Black Alps yearly conferences.</div>
+                        </th>
+                        <td nowrap><a href="https://www.blackalps.ch/ba-19/">2019</a></td>
+                    </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="column">
                 <span class="subsec-head">Master and Bachelor Supervisor</span>
                 <table class="table service-table">
                     <tbody>
@@ -298,7 +335,7 @@
                             UniNE
                             <div class="abbrv">University of Neuchâtel</div>
                         </th>
-                        <td nowrap>2022, 2023</td>
+                        <td nowrap>2022—2024</td>
                     </tr>
                     </tbody>
                 </table>
@@ -310,7 +347,7 @@
                             HES-SO
                             <div class="abbrv">University of Applied Sciences and Arts Western Switzerland</div>
                         </th>
-                        <td nowrap>2023</td>
+                        <td nowrap>2023, 2025</td>
                     </tr>
                     <tr>
                         <th>
@@ -318,20 +355,6 @@
                             <div class="abbrv">Haute École d'Ingénierie et de Gestion du Canton de Vaud</div>
                         </th>
                         <td nowrap>2019</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="column">
-                <span class="subsec-head">Capture the Flag Challenges Contributor</span>
-                <table class="table service-table">
-                    <tbody>
-                    <tr>
-                        <th>
-                            BlackAlps
-                            <div class="abbrv">Black Alps is a non-profit organization whose main goal is the promotion of cybersecurity through the organization of Black Alps yearly conferences.</div>
-                        </th>
-                        <td nowrap><a href="https://www.blackalps.ch/ba-19/">2019</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -359,7 +382,7 @@
                                 Ph.D. in Computer Science
                                 <div class="abbrv">University of Neuchâtel, Switzerland</div>
                             </th>
-                            <td nowrap>2020—</td>
+                            <td nowrap>2020—2024</td>
                         </tr>
                         <tr>
                             <th>
@@ -394,6 +417,13 @@
                     <div class="teaching-head">Awards</div>
                     <table class="table service-table">
                         <tbody>
+                        <tr>
+                            <th>
+                                Léon Du Pasquier et Louis Perrier (outstanding PhD)
+                                <div class="abbrv">University of Neuchâtel, Switzerland</div>
+                            </th>
+                            <td nowrap><a href="https://www.unine.ch/actualites/evenements/remise-des-titres-et-prix-academiques/prix-academiques-et-laureat-e-s/prix-leon-du-pasquier-louis-perrier/" target="_blank">2025</a></td>
+                        </tr>
                         <tr>
                             <th>
                                 Recognized Contributor (WebAssembly-related)
@@ -452,10 +482,17 @@
                         <tbody>
                         <tr>
                             <th>
+                                System Software Architect
+                                <div class="abbrv">CYSEC SA, Switzerland</div>
+                            </th>
+                            <td nowrap>2025—</td>
+                        </tr>
+                        <tr>
+                            <th>
                                 Scientific collaborator & teaching assistant
                                 <div class="abbrv">University of Neuchâtel, Switzerland</div>
                             </th>
-                            <td nowrap>2020—</td>
+                            <td nowrap>2020—2024</td>
                         </tr>
                         <tr>
                             <th>

@@ -10,7 +10,7 @@ public record Publication
     public required string ConferenceName { get; init; }
     public string? Doi { get; init; }
     public bool IsInfluential { get; init; } = false;
-    public Uri? LinkToArxiv { get; init; }
+    public Uri? LinkToOpenAccess { get; init; }
     public Uri? LinkToCode { get; init; }
     public Uri? LinkToConference { get; init; }
     public Uri? LinkToJournal { get; init; }

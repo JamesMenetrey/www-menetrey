@@ -10,19 +10,20 @@ public class PublicationList
         {
             Authors = [
                 new("Peterson", "Yuhala"),
-                Author.Me, 
-                Author.PascalFelber,
-                Author.MarceloPasin, 
-                Author.ValerioSchiavoni
+                new("Christian", "Göttel"),
+                Author.Me,
+                Author.ValerioSchiavoni,
+                new("David", "Kozhaya"),
+                Author.PascalFelber
             ],
-            ConferenceAbbreviation = "SAC'24",
-            ConferenceEditionNumber = 39,
-            ConferenceName = "ACM/SIGAPP Symposium On Applied Computing",
-            Date = new(2023, 12, 01),
-            Doi = "10.1145/3605098.3635994",
-            Title = "Fortress: Securing IoT Peripherals with Trusted Execution Environments",
-            LinkToArxiv = new("https://arxiv.org/abs/2312.02542"),
-            LinkToConference = new("https://www.sigapp.org/sac/sac2024/")
+            ConferenceAbbreviation = "ECRTS'25",
+            ConferenceEditionNumber = 37,
+            ConferenceName = "Euromicro Conference on Real-Time Systems",
+            Date = new(2025, 07, 08),
+            Doi = "10.4230/LIPIcs.ECRTS.2025.8",
+            Title = "On Real-Time Guarantees in Intel SGX and TDX",
+            LinkToOpenAccess = new("https://drops.dagstuhl.de/storage/00lipics/lipics-vol335-ecrts2025/LIPIcs.ECRTS.2025.8/LIPIcs.ECRTS.2025.8.pdf"),
+            LinkToConference = new("https://archives.ecrts.org/fileadmin/WebsitesArchiv/ecrts2025/index.html")
         },
         new Publication
         {
@@ -38,12 +39,31 @@ public class PublicationList
             ConferenceAbbreviation = "TDSC",
             ConferenceEditionNumber = 0,
             ConferenceName = "IEEE Transactions on Dependable and Secure Computing",
-            Date = new(2023, 11, 01),
+            Date = new(2024, 07, 01),
             Doi = "10.1109/TDSC.2023.3334516",
             IsInfluential = true,
             Title = "A Comprehensive Trusted Runtime for WebAssembly with Intel SGX",
             LinkToCode = new("https://github.com/JamesMenetrey/unine-twine"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2312.09087"),
             LinkToJournal = new("https://www.computer.org/csdl/journal/tq/5555/01/10323228/1SewYRI4Rd6")
+        },
+        new Publication
+        {
+            Authors = [
+                new("Peterson", "Yuhala"),
+                Author.Me, 
+                Author.PascalFelber,
+                Author.MarceloPasin, 
+                Author.ValerioSchiavoni
+            ],
+            ConferenceAbbreviation = "SAC'24",
+            ConferenceEditionNumber = 39,
+            ConferenceName = "ACM/SIGAPP Symposium On Applied Computing",
+            Date = new(2023, 12, 01),
+            Doi = "10.1145/3605098.3635994",
+            Title = "Fortress: Securing IoT Peripherals with Trusted Execution Environments",
+            LinkToOpenAccess = new("https://arxiv.org/abs/2312.02542"),
+            LinkToConference = new("https://www.sigapp.org/sac/sac2024/")
         },
         new Publication
         {
@@ -63,7 +83,7 @@ public class PublicationList
             Date = new(2023, 12, 01),
             Doi = "10.4230/LIPIcs.OPODIS.2023.23",
             Title = "A Holistic Approach for Trustworthy Distributed Systems with WebAssembly and TEEs",
-            LinkToArxiv = new("https://arxiv.org/abs/2312.00702"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2312.00702"),
             LinkToCode = new("https://github.com/JamesMenetrey/unine-opodis2023"),
             LinkToConference = new("https://xdefago.github.io/opodis23/")
         },
@@ -86,7 +106,7 @@ public class PublicationList
             Doi = "10.1145/3583678.3596899",
             Title = "Preventing EFail Attacks with Client-Side WebAssembly: The Case of Swiss Post's IncaMail",
             LinkToConference = new("https://2023.debs.org/"),
-            LinkToArxiv = new("https://arxiv.org/abs/2306.13388")
+            LinkToOpenAccess = new("https://arxiv.org/abs/2306.13388")
         },
         new Publication
         {
@@ -104,7 +124,7 @@ public class PublicationList
             Doi = "10.1109/ICDCS54860.2022.00116",
             IsInfluential = true,
             Title = "WaTZ: A Trusted WebAssembly Runtime Environment with Remote Attestation for TrustZone",
-            LinkToArxiv = new("https://arxiv.org/abs/2206.08722"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2206.08722"),
             LinkToConference = new("https://icdcs2022.icdcs.org/"),
             LinkToCode = new("https://github.com/JamesMenetrey/unine-watz")
         },
@@ -123,7 +143,7 @@ public class PublicationList
             Date = new(2022, 06, 01),
             Doi = "10.1145/3526059.3533618",
             Title = "WebAssembly as a common layer for the cloud-edge continuum",
-            LinkToArxiv = new("https://arxiv.org/abs/2206.12888"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2206.12888"),
             LinkToConference = new("https://www.accordion-project.eu/frame-2nd-workshop-on-flexible-resource-and-application-management-on-the-edge/")
         },
         new Publication
@@ -144,7 +164,7 @@ public class PublicationList
             Date = new(2022, 06, 01),
             Doi = "10.1007/978-3-031-16092-9_7",
             Title = "Attestation Mechanisms for Trusted Execution Environments Demystified",
-            LinkToArxiv = new("https://arxiv.org/abs/2206.03780"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2206.03780"),
             LinkToConference = new("https://www.discotec.org/2022/dais")
         },
         new Publication
@@ -162,7 +182,7 @@ public class PublicationList
             ConferenceName = "Workshop on System Software for Trusted Execution",
             Date = new(2022, 03, 01),
             Title = "An Exploratory Study of Attestation Mechanisms for Trusted Execution Environments",
-            LinkToArxiv = new("https://arxiv.org/abs/2204.06790"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2204.06790"),
             LinkToConference = new("https://www.discotec.org/2022/dais")
         },
         new Publication
@@ -184,7 +204,7 @@ public class PublicationList
             Date = new(2021, 12, 01),
             Doi = "10.1145/3464298.3493406",
             Title = "Montsalvat: Intel SGX Shielding for GraalVM Native Images",
-            LinkToArxiv = new("https://arxiv.org/abs/2305.00766"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2305.00766"),
             LinkToCode = new ("https://github.com/Yuhala/montsalvat"),
             LinkToConference = new("https://middleware-conf.github.io/2021/")
         },
@@ -204,7 +224,7 @@ public class PublicationList
             Doi = "10.1109/ICDE51399.2021.00025",
             IsInfluential = true,
             Title = "Twine: An Embedded Trusted Runtime for WebAssembly",
-            LinkToArxiv = new("https://arxiv.org/abs/2103.15860"),
+            LinkToOpenAccess = new("https://arxiv.org/abs/2103.15860"),
             LinkToCode = new("https://github.com/JamesMenetrey/unine-twine"),
             LinkToConference = new("https://icde2021.gr/")
         }
