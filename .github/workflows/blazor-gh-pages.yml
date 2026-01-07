@@ -24,7 +24,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -33,11 +33,9 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v5
         with:
-          # Temporarily hardcoded to 8.0 as this cause javascript exceptions with net10 (also in global.json)
-          dotnet-version: 8.0.416
+          dotnet-version: 10.x
       - name: Install .NET WASM Build Tools
-        # Temporarily hardcoded to 8.0 as this cause javascript exceptions with net10
-        run: dotnet workload install wasm-tools --version 8.0.416
+        run: dotnet workload install wasm-tools
       - name: Publish .NET Blazor WebAssembly Project
         run: dotnet publish PersonalWebsite.csproj -c:Release -o ./dist --nologo
       - name: Move the static assets
